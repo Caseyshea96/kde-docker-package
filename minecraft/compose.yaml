@@ -1,0 +1,19 @@
+services:
+  minecraft:
+    image: eclipse-temurin:25-jre-noble
+    container_name: minecraft-paper
+    restart: unless-stopped
+    init: true
+    user: "${PUID:-1000}:${PGID:-1000}"
+    working_dir: /data
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms${PAPER_MIN_MEMORY:-2G} -Xmx${PAPER_MAX_MEMORY:-4G}"
+    command: ["java", "-jar", "paper-26.1.2-74.jar", "--nogui"]
+    ports:
+      - "${MINECRAFT_PORT:-25565}:25565/tcp"
+    volumes:
+      - "${MINECRAFT_DATA_PATH:-.}:/data"
+    stdin_open: true
+    tty: true
+    stop_grace_period: 2m
+

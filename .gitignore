@@ -1,0 +1,55 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/id_ed25519
+**/id_ed25519.pub
+
+# Jellyfin runtime data
+jellyfin/cache/
+jellyfin/config/
+
+# RustDesk runtime data and identity keys
+rustdesk/data/
+
+# Minecraft runtime data
+minecraft/cache/
+minecraft/config/
+minecraft/libraries/
+minecraft/logs/
+minecraft/plugins/
+minecraft/versions/
+minecraft/world*/
+minecraft/*.jar
+minecraft/*.tar
+minecraft/*.tar.gz
+minecraft/*.zip
+minecraft/.console_history
+minecraft/banned-*.json
+minecraft/ops.json
+minecraft/usercache.json
+minecraft/whitelist.json
+minecraft/eula.txt
+minecraft/server.properties
+minecraft/bukkit.yml
+minecraft/spigot.yml
+minecraft/commands.yml
+minecraft/help.yml
+minecraft/permissions.yml
+minecraft/version_history.json
+
+# General generated and local files
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.log
+*.log.gz
+*.pid
+*.lock
+.DS_Store
+Thumbs.db
+
